@@ -2,7 +2,7 @@ export default class DemoElement extends HTMLElement {
   connectedCallback() {
     const root = this.attachShadow({ mode: "open" });
     root.innerHTML = html;
-    let code_el = root.querySelector("pre");
+    let code_el = root.querySelector("code");
     let code = root.querySelector("slot").assignedNodes()[0];
     console.log("code", code);
     let htmlstr = Array.prototype.reduce.call(
@@ -17,9 +17,20 @@ export default class DemoElement extends HTMLElement {
 }
 
 let html = `
-<style></style>
+<style>
+:host{
+display:block;
+}
+pre {
+  background: #f5f2f0;
+  padding: 1rem;
+}
+  details{
+  margin-bottom:1rem;
+  }
+</style>
 <details><summary>Show Source</summary>
-<code><pre></pre></code>
+<pre><code></code></pre>
 </details>
 <slot></slot>
 `;

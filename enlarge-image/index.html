@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>image test</title>
+    <link rel="stylesheet" href="../demo/demo.css" />
+    <script type="module" src="../demo/demo-element.js"></script>
+    <script type="module" src="../lorem-ipsum/lorem-ipsum.js"></script>
+
+    <script type="module" src="enlarge-image.js"></script>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      /*body:has(dialog[open]),
+      body.open {
+        overflow: hidden;
+      }*/
+      main {
+        max-width: 45ch;
+        line-height: 1.45;
+        margin: 2rem auto;
+        display: block;
+      }
+      img {
+        outline: 6px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <demo-element>
+        <enlarge-image big="square.png">
+          <img src="thumbs/square.png" alt="" srcset="" />
+        </enlarge-image>
+      </demo-element>
+
+      <lorem-ipsum par="1"></lorem-ipsum>
+
+      <demo-element>
+        <enlarge-image big="landscape.jpg">
+          <img src="thumbs/landscape.jpg" alt="" srcset="" />
+        </enlarge-image>
+      </demo-element>
+      <lorem-ipsum par="1"></lorem-ipsum>
+
+      <demo-element>
+        <enlarge-image big="portrait.jpg">
+          <img src="thumbs/portrait.jpg" alt="" srcset="" />
+        </enlarge-image>
+      </demo-element>
+      <lorem-ipsum par="1"></lorem-ipsum>
+
+      <h4>how to make thumbnails</h4>
+      <p>
+        <code>magick mogrify -resize 200x -quality 90 -path thumbs/ *.jpg</code>
+      </p>
+    </main>
+  </body>
+</html>
