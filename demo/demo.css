@@ -12,6 +12,7 @@ ul,
 li {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 1rem;
 }
 
 ul {
@@ -26,6 +27,7 @@ story-browser {
   min-height: 100vh;
 }
 story-browser::part(navigation) {
+  padding: 1rem;
   margin-right: 2rem;
   height: 100%;
 }
