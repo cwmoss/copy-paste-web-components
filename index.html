@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <script type="module" src="demo/story-browser.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+        }
+
+        ul,
+        li {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul {
+            margin-top: 2rem;
+        }
+
+        h2 {
+            margin-top: 3rem;
+            font-size: 1.3rem;
+        }
+
+        story-browser::part(navigation) {
+            margin-right: 2rem;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <story-browser>
+        <h2>Getting Started</h2>
+        <ul>
+            <li><a href="#path=hello/demo.html">hello</a></li>
+        </ul>
+    </story-browser>
+</body>
+
+</html>
