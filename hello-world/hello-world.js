@@ -1,3 +1,7 @@
+/*
+  dummy component for testing
+*/
+
 export default class HelloWorld extends HTMLElement {
   connectedCallback() {
     this.attachShadow({ mode: "open" }).innerHTML =

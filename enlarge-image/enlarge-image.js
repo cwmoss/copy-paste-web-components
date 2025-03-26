@@ -14,6 +14,7 @@ const show = (img) => {
   document.body.style.overflow = "hidden";
   close_btn.focus();
 };
+
 const close = (ev) => {
   window.removeEventListener("keydown", keydown);
   history.replaceState(null, null, " ");
