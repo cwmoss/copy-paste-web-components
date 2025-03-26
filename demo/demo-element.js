@@ -36,7 +36,7 @@ let html = `
 display:block;
 }
 pre {
-  background: #f5f2f0;
+  background: light-dark(#f5f2f0, #333);
   padding: 1rem;
 }
   details{

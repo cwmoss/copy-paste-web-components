@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo</title>
-    <script type="module" src="demo/story-browser.js"></script>
-    <link rel="stylesheet" href="demo/demo.css" />
-  </head>
 
-  <body>
-    <story-browser>
-      <h2>Getting Started</h2>
-      <ul>
-        <li><a href="#path=hello-world/">hello</a> (just a test)</li>
-        <li><a href="#path=lorem-ipsum/">Lorem Ipsum</a></li>
-        <li><a href="#path=enlarge-image/">Enlarge Image</a></li>
-      </ul>
-      <footer>
-        <a href="https://github.com/cwmoss/copy-paste-web-components">github</a>
-      </footer>
-    </story-browser>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo</title>
+  <script type="module" src="toggle-theme/toggle-theme.js"></script>
+  <script type="module" src="demo/story-browser.js"></script>
+  <link rel="stylesheet" href="demo/demo.css" />
+</head>
+
+<body>
+  <story-browser>
+    <toggle-theme slot="toolbar"></toggle-theme>
+    <h2>Getting Started</h2>
+
+    <h2>Components</h2>
+    <ul class="nav">
+      <li><a href="#path=hello-world/">hello</a></li>
+      <li><a href="#path=lorem-ipsum/">Lorem Ipsum</a></li>
+      <li><a href="#path=enlarge-image/">Enlarge Image</a></li>
+      <li><a href="#path=toggle-theme/">Toggle Theme</a></li>
+    </ul>
+    <footer>
+      <a href="https://github.com/cwmoss/copy-paste-web-components">github</a>
+    </footer>
+  </story-browser>
+</body>
+
 </html>

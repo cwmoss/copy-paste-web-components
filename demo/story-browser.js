@@ -12,13 +12,14 @@ const template = `
   <style>
     :host {
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: 250px 1fr;
       overflow: hidden;
     }
 
     [part~="navigation"] {
       position: relative;
       overflow: auto;
+      border-right: 1px solid light-dark(#eee, #333);
     }
 
     #toolbar {
@@ -26,15 +27,18 @@ const template = `
       position: sticky;
       top: 0;
       width: 100%;
+      align-items: center;
     }
 
     #closeButton {
       background: none;
       border: none;
       color: inherit;
-      margin: 0.5em;
+      margin: 0;
+      padding:0;
       position: absolute;
       right: 0;
+      top: 3px;
     }
 
     [part~="frame"] {
@@ -46,7 +50,7 @@ const template = `
   </style>
   <nav id="navigation" part="navigation">
     <div id="toolbar">
-      <button id="closeButton">⨉</button>
+      <slot name="toolbar"></slot><button id="closeButton">⨉</button>
     </div>
     <slot></slot>
   </nav>
@@ -128,7 +132,7 @@ function highlighCurrentLink(element) {
 // Following a change in the set of nodes assigned to the default slot,
 // extract the set of anchor tags in that collection of nodes.
 function refreshLinks(element) {
-  const slot = element.shadowRoot.querySelector("slot");
+  const slot = element.shadowRoot.querySelector("slot:not([name]");
 
   const links = [];
   slot.assignedElements({ flatten: true }).forEach((el) => {
