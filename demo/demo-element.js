@@ -3,8 +3,8 @@ export default class DemoElement extends HTMLElement {
     const root = this.attachShadow({ mode: "open" });
     root.innerHTML = html;
     let code_el = root.querySelector("code");
-    let code = root.querySelector("slot").assignedNodes()[0];
-    console.log("code", code);
+    // let code = root.querySelector("slot").assignedNodes()[0];
+    // console.log("code", code);
     let htmlstr = Array.prototype.reduce.call(
       root.querySelector("slot").assignedNodes(),
       function (html, node) {
@@ -12,7 +12,21 @@ export default class DemoElement extends HTMLElement {
       },
       ""
     );
-    code_el.appendChild(document.createTextNode(htmlstr.trim()));
+
+    // console.log("html++", htmlstr);
+    htmlstr = this.reindent(htmlstr);
+    // console.log("html++", htmlstr);
+    code_el.appendChild(document.createTextNode(htmlstr));
+  }
+  reindent(text) {
+    let lines = text.split("\n");
+    let start = lines.findIndex((l) => l.trim());
+    let leading = lines[start].search(/\S|$/);
+    // console.log("first line with content", start, leading);
+    let re = new RegExp(String.raw`^\s{${leading}}`);
+    lines = lines.map((l) => l.replace(re, ""));
+    text = lines.join("\n").trim();
+    return text;
   }
 }
 
