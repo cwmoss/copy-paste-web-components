@@ -21,6 +21,7 @@ const close = (ev) => {
   // window.location.href.split("#")[0];
   // window.location.hash = "";
   dialog.close();
+  image.src = "";
   document.body.style.overflow = "";
 };
 const prev = (ev) => {
