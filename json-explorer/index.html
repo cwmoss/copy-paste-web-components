@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Explorer Component</title>
+    <link rel="stylesheet" href="../demo/demo.css" />
+    <script type="module" src="../demo/demo-element.js"></script>
+    <script type="module" src="json-explorer.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>JSON Explorer</h1>
+
+        <h2>Set Raw Data via data setter</h2>
+        <code>
+            <pre>
+je_demo1.data = {
+    greeting: {
+        hello: "world"
+    },
+    "sunny": true
+}
+        </pre>
+        </code>
+        <demo-element>
+            <json-explorer id="je_demo1"></json-explorer>
+        </demo-element>
+
+        <h2>Set JSON Data via json setter</h2>
+        <code>
+            <pre>
+je_demo2.json = `{
+    "greeting": {
+        "hello": "world"
+    },
+    "sunny": true
+}`
+        </pre>
+        </code>
+        <demo-element>
+            <json-explorer id="je_demo2"></json-explorer>
+        </demo-element>
+
+        <h2>Set Data via data attribute</h2>
+
+        <demo-element>
+            <json-explorer data='{"hello":"my name is json"}'></json-explorer>
+        </demo-element>
+
+        <h2>Set Data via Text Content</h2>
+
+        <demo-element>
+            <json-explorer>{
+                "hello":"my name is json",
+                "bag":["onions", "garlic", "pepper"]
+                }</json-explorer>
+        </demo-element>
+
+    </main>
+
+    <script type="module">
+        je_demo1.data = {
+            greeting: {
+                hello: "world"
+            },
+            "sunny": true
+        }
+        je_demo2.json = `{
+                "greeting": {
+                    "hello": "world"
+                },
+                "sunny": true
+            }`
+    </script>
+</body>
+
+</html>
